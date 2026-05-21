@@ -40,7 +40,7 @@ Invoke-RestMethod -Method POST -Uri "https://cloudshield-policyengine-evaluator.
 
 ### Test 3: Evaluate an Insecure Port Violation (HTTP POST - Expected: `NON_COMPLIANT`)
 ```powershell
-Invoke-RestMethod -Method POST -Uri "https://onrender.com/v1/evaluator/verify-compute?id=vm-rogue-99&compartment=marketing-dev&ports=80&encrypted=true"
+Invoke-RestMethod -Method POST -Uri "https://cloudshield-policyengine-evaluator.onrender.com/v1/evaluator/verify-compute?id=vm-rogue-99&compartment=marketing-dev&ports=80&encrypted=true"
 ```
 *Expected Output: Triggers your advanced conditional pattern-matching guard: `case ComputeInstance ci && ci.openPortsCount() > 22`.*
 
@@ -59,7 +59,7 @@ Invoke-RestMethod -Method POST -Uri "https://cloudshield-policyengine-evaluator.
 ## Local Installation & Development
 
 ### Prerequisites
-* **Java Development Kit (JDK) 17 or 21**
+* **Java Development Kit (JDK) 17**
 * **Apache Maven 3.8+**
 
 ### 1. Build the Standalone Package (Fat JAR)
